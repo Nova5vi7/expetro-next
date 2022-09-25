@@ -51,7 +51,7 @@ const Header = ({
                                         </li>
                                         <li>
                                             <Link href="/">
-                                                <a>Отправка</a>
+                                                <a>Оплата</a>
                                             </Link>
                                         </li>
                                         <li>
@@ -169,7 +169,9 @@ const Header = ({
                                                 </a>
                                             </Link>
                                             <Link href="/shop-wishlist">
-                                                <span className="lable">Wishlist</span>
+                                                <a>
+                                                    <span className="lable">Wishlist</span>
+                                                </a>
                                             </Link>
                                         </div>
                                         <div className="header-action-icon-2">
