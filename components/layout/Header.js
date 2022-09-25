@@ -112,7 +112,7 @@ const Header = ({
                                                 <li>
                                                     <Link href="/#">
                                                         <a>
-                                                            {/*<img src="/assets/imgs/theme/flag-ru.png" alt="" />*/}
+                                                            <img src="/assets/imgs/theme/flag-en.png" alt="" />
                                                             English
                                                         </a>
                                                     </Link>
