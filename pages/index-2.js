@@ -8,9 +8,10 @@ import Banner5 from "./../components/elements/Banner5";
 import Bottom from "./../components/elements/Bottom";
 import IntroPopup from "./../components/elements/IntroPopup";
 import CategorySlider2 from "./../components/sliders/Category2";
+import {server} from "../config";
 
 
-function Index2() {
+function Index2({catAll, active}) {
     return (
         <>
             <IntroPopup />
@@ -64,7 +65,7 @@ function Index2() {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                            <CategoryTab/>
+                                <CategoryTab products={catAll} active={active}/>
                             </div>
                         </div>
                     </div>
@@ -129,3 +130,14 @@ function Index2() {
 }
 
 export default Index2;
+
+export async function getServerSideProps(context) {
+    const request = await fetch(`${server}/static/product.json`);
+    const allProducts = await request.json();
+    const catAll = allProducts.filter((item) => item.category);
+    const active = '1'
+
+    return {
+        props: {catAll, active}, // will be passed to the page component as props
+    }
+}

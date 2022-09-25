@@ -5,9 +5,7 @@ import Cat2Tab from '../elements/NewArrivalTab';
 import Cat3Tab from '../elements/TrendingTab';
 import Link from "next/link"
 
-function CategoryTab() {
-    const [active, setActive] = useState("1");
-    const [catAll, setCatAll] = useState([]);
+function CategoryTab({products, active}) {
     const [cat1, setCat1] = useState([]);
     const [cat2, setCat2] = useState([]);
     const [cat3, setCat3] = useState([]);
@@ -16,8 +14,8 @@ function CategoryTab() {
         const request = await fetch(`${server}/static/product.json`);
         const allProducts = await request.json();
         const catAllItem = allProducts.filter((item) => item.category);
-        setCatAll(catAllItem);
-        setActive("1");
+        // setCatAll(catAllItem);
+        // setActive("1");
     };
     const catP1 = async () => {
         const request = await fetch(`${server}/static/product.json`);
@@ -41,10 +39,6 @@ function CategoryTab() {
         setCat3(cat3Item);
         setActive("4");
     };
-
-    useEffect(() => {
-        catPAll();
-    }, []);
 
     return (
         <>
@@ -103,7 +97,7 @@ function CategoryTab() {
                     }
                 >
                     <div className="product-grid-4 row">
-                        <Cat1Tab products={catAll}/>
+                        <Cat1Tab products={products}/>
                     </div>
                 </div>
 

@@ -11,11 +11,11 @@ import Layout from "./../components/layout/Layout";
 import CategorySlider from "./../components/sliders/Category";
 import Intro1 from "./../components/sliders/Intro1";
 import Link from "next/link";
+import {server} from "../config";
 
-export default function Home() {
+export default function Home({catAll, active}) {
     return (
         <>
-            <IntroPopup />
 
             <Layout noBreadcrumb="d-none">
                 <section className="home-slider position-relative mb-30">
@@ -74,36 +74,24 @@ export default function Home() {
                 <section className="product-tabs section-padding position-relative">
                     <div className="container">
                         <div className="col-lg-12">
-                            <CategoryTab />
+                            <CategoryTab products={catAll} active={active}/>
                         </div>
                     </div>
                 </section>
-
-                <section className="section-padding pb-5">
-                    <div className="container">
-                        <FetchTabSlider />
-                    </div>
-                </section>
-
-                <section className="section-padding pb-5">
-                    <div className="container">
-                        <div className="section-title wow animate__animated animate__fadeIn" data-wow-delay="0">
-                            <h3 className="">Deals Of The Day</h3>
-                            <Link href="/products">
-                                <a className="show-all">
-                                    All Deals
-                                    <i className="fi-rs-angle-right"></i>
-                                </a>
-                            </Link>
-                        </div>
-                        <FeatchDeals />
-                    </div>
-                </section>
-
-                <Bottom />
 
                 <QuickView />
             </Layout>
         </>
     );
+}
+
+export async function getServerSideProps(context) {
+    const request = await fetch(`${server}/static/product.json`);
+    const allProducts = await request.json();
+    const catAll = allProducts.filter((item) => item.category);
+    const active = '1'
+
+    return {
+        props: {catAll, active}, // will be passed to the page component as props
+    }
 }

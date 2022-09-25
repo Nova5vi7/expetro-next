@@ -11,8 +11,9 @@ import Bottom from "./../components/elements/Bottom";
 import IntroPopup from "./../components/elements/IntroPopup";
 import CategorySlider2 from "./../components/sliders/Category2";
 import Intro4 from "./../components/sliders/intro4";
+import {server} from "../config";
 
-function Test() {
+function Test({catAll, active}) {
     return (
         <>
             <IntroPopup />
@@ -26,7 +27,7 @@ function Test() {
                     <div className="row">
                         <div className="col-lg-4-5">
                             <section className="product-tabs section-padding position-relative">
-                                <CategoryTab />
+                                <CategoryTab products={catAll} active={active}/>
                             </section>
 
                             <section className="section-padding pb-5">
@@ -203,3 +204,14 @@ function Test() {
 }
 
 export default Test;
+
+export async function getServerSideProps(context) {
+    const request = await fetch(`${server}/static/product.json`);
+    const allProducts = await request.json();
+    const catAll = allProducts.filter((item) => item.category);
+    const active = '1'
+
+    return {
+        props: {catAll, active}, // will be passed to the page component as props
+    }
+}

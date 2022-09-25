@@ -12,7 +12,9 @@ import "react-responsive-modal/styles.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import StorageWrapper from "../components/ecommerce/storage-wrapper";
-import "../public/assets/css/main.css";
+import '../public/assets/sass/vendors/bootstrap.min.css';
+import '../public/assets/sass/vendors/uicons-regular-straight.css';
+import "../public/assets/sass/main.scss";
 import store from "../redux/store";
 import Preloader from "./../components/elements/Preloader";
 
