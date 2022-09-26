@@ -104,7 +104,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
 
                                     {getPaginatedProducts.map((item, i) => (
                                         <div
-                                            className="col-lg-1-5 col-md-4 col-12 col-sm-6"
+                                            className="col-lg-1-5 col-md-4 col-12 col-sm-6 product-card"
                                             key={i}
                                         >
                                             <SingleProduct product={item} />

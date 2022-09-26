@@ -36,7 +36,7 @@ const Header = ({
                 <div className="header-top header-top-ptb-1 d-none d-lg-block">
                     <div className="container">
                         <div className="row align-items-center">
-                            <div className="col-xl-3 col-lg-4">
+                            <div className="col-xl-5 col-lg-6">
                                 <div className="header-info">
                                     <ul>
                                         <li>
@@ -72,7 +72,7 @@ const Header = ({
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-xl-6 col-lg-4">
+                            <div className="col-xl-3 special-text">
                                 <div className="text-center">
                                     <div id="news-flash" className="d-inline-block">
                                         <ul>
@@ -86,7 +86,7 @@ const Header = ({
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-3 col-lg-4">
+                            <div className="col-xl-4 col-lg-6">
                                 <div className="header-info header-info-right">
                                     <ul>
                                         <li>
@@ -288,124 +288,18 @@ const Header = ({
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="/">
+                                                <Link href='/products'>
                                                     <a>
                                                         Посуд
-                                                        <i className="fi-rs-angle-down"></i>
                                                     </a>
                                                 </Link>
-                                                <ul className="sub-menu">
-                                                    <li>
-                                                        <Link href="/shop-grid-right">
-                                                            <a>Shop Grid – Right Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/products">
-                                                            <a>Shop Grid – Left Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-list-right">
-                                                            <a>Shop List – Right Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-list-left">
-                                                            <a>Shop List – Left Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-fullwidth">
-                                                            <a>Shop - Wide</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-filter">
-                                                            <a>Shop - Filter</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-wishlist">
-                                                            <a>Shop – Wishlist</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-cart">
-                                                            <a>Shop – Cart</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-checkout">
-                                                            <a>Shop – Checkout</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-compare">
-                                                            <a>Shop – Compare</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
                                             </li>
                                             <li>
-                                                <Link href="/">
+                                                <Link href='/products'>
                                                     <a>
                                                         Розвиток та творчість
-                                                        <i className="fi-rs-angle-down"></i>
                                                     </a>
                                                 </Link>
-                                                <ul className="sub-menu">
-                                                    <li>
-                                                        <Link href="/shop-grid-right">
-                                                            <a>Shop Grid – Right Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/products">
-                                                            <a>Shop Grid – Left Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-list-right">
-                                                            <a>Shop List – Right Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-list-left">
-                                                            <a>Shop List – Left Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-fullwidth">
-                                                            <a>Shop - Wide</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-filter">
-                                                            <a>Shop - Filter</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-wishlist">
-                                                            <a>Shop – Wishlist</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-cart">
-                                                            <a>Shop – Cart</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-checkout">
-                                                            <a>Shop – Checkout</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-compare">
-                                                            <a>Shop – Compare</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
                                             </li>
                                             <li>
                                                 <Link href="/blog-category-grid">

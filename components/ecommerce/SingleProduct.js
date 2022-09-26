@@ -30,7 +30,7 @@ const SingleProduct = ({
     };
     return (
         <>
-            <div className="product-cart-wrap mb-30">
+            <div className="product-cart-wrap">
                 <div className="product-img-action-wrap">
                     <div className="product-img product-img-zoom">
                         <Link
