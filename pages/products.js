@@ -1,6 +1,7 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
+import {connect} from "react-redux";
+import {wrapper} from '../redux/store';
 import ShowSelect from "../components/ecommerce/Filter/ShowSelect";
 import SortSelect from "../components/ecommerce/Filter/SortSelect";
 import Breadcrumb2 from "../components/layout/Breadcrumb2";
@@ -12,15 +13,26 @@ import Pagination from "./../components/ecommerce/Pagination";
 import QuickView from "./../components/ecommerce/QuickView";
 import SingleProduct from "./../components/ecommerce/SingleProduct";
 import Layout from "./../components/layout/Layout";
-import { fetchProduct } from "./../redux/action/product";
+import {fetchProduct} from "../redux/action/product";
+import * as Types from "../redux/constants/actionTypes";
 
-const Products = ({ products, productFilters, fetchProduct }) => {
-    // console.log(products);
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+    const sendRequest = await fetch('http://localhost:3000/static/product.json')
+    const data = await sendRequest.json()
 
-    let Router = useRouter(),
-        searchTerm = Router.query.search,
-        showLimit = 12,
-        showPagination = 4;
+    store.dispatch({
+        type: Types.FETCHED_PRODUCT,
+        payload: { products: data }
+    })
+});
+
+const Products = ({products, productFilters, fetchProduct}) => {
+    console.log(products, productFilters);
+
+    let Router = useRouter()
+    let searchTerm = Router.query.search
+    let showLimit = 12
+    let showPagination = 4
 
     let [pagination, setPagination] = useState([]);
     let [limit, setLimit] = useState(showLimit);
@@ -28,7 +40,8 @@ const Products = ({ products, productFilters, fetchProduct }) => {
     let [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        fetchProduct(searchTerm, "/static/product.json", productFilters);
+        //TODO спробувати запускати фечінг тільки тоді коли змінюється параметри фільтрів
+        fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
         cratePagination();
     }, [productFilters, limit, pages, products.items.length]);
 
@@ -70,7 +83,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
     return (
         <>
             <Layout noBreadcrumb="d-none">
-            <Breadcrumb2/>
+                <Breadcrumb2/>
                 <section className="mt-50 mb-50">
                     <div className="container mb-30">
                         <div className="row flex-row-reverse">
@@ -93,7 +106,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                             />
                                         </div>
                                         <div className="sort-by-cover">
-                                            <SortSelect />
+                                            <SortSelect/>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +120,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                             className="col-lg-1-5 col-md-4 col-12 col-sm-6 product-card"
                                             key={i}
                                         >
-                                            <SingleProduct product={item} />
+                                            <SingleProduct product={item}/>
                                             {/* <SingleProductList product={item}/> */}
                                         </div>
                                     ))}
@@ -133,18 +146,18 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                     <h5 className="section-title style-1 mb-30">
                                         Category
                                     </h5>
-                                    <CategoryProduct />
+                                    <CategoryProduct/>
                                 </div>
 
                                 <div className="sidebar-widget price_range range mb-30">
-                                <h5 className="section-title style-1 mb-30">Fill by price</h5>
+                                    <h5 className="section-title style-1 mb-30">Fill by price</h5>
 
                                     <div className="price-filter">
                                         <div className="price-filter-inner">
-                                            <br />
-                                            <PriceRangeSlider />
+                                            <br/>
+                                            <PriceRangeSlider/>
 
-                                            <br />
+                                            <br/>
                                         </div>
                                     </div>
 
@@ -153,18 +166,18 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                             <label className="fw-900">
                                                 Color
                                             </label>
-                                            <VendorFilter />
+                                            <VendorFilter/>
                                             <label className="fw-900 mt-15">
                                                 Item Condition
                                             </label>
-                                            <SizeFilter />
+                                            <SizeFilter/>
                                         </div>
                                     </div>
-                                    <br />
+                                    <br/>
                                 </div>
 
                                 <div className="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
-                                <h5 className="section-title style-1 mb-30">New products</h5>
+                                    <h5 className="section-title style-1 mb-30">New products</h5>
                                     <div className="single-post clearfix">
                                         <div className="image">
                                             <img
@@ -182,7 +195,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                             <div className="product-rate">
                                                 <div
                                                     className="product-rating"
-                                                    style={{ width: "90%" }}
+                                                    style={{width: "90%"}}
                                                 ></div>
                                             </div>
                                         </div>
@@ -204,7 +217,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                             <div className="product-rate">
                                                 <div
                                                     className="product-rating"
-                                                    style={{ width: "80%" }}
+                                                    style={{width: "80%"}}
                                                 ></div>
                                             </div>
                                         </div>
@@ -226,7 +239,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                             <div className="product-rate">
                                                 <div
                                                     className="product-rating"
-                                                    style={{ width: "60%" }}
+                                                    style={{width: "60%"}}
                                                 ></div>
                                             </div>
                                         </div>
@@ -240,12 +253,12 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                                     <div className="banner-text">
                                         <span>Oganic</span>
                                         <h4>
-                                            Save 17% <br />
+                                            Save 17% <br/>
                                             on{" "}
                                             <span className="text-brand">
                                                 Oganic
                                             </span>
-                                            <br />
+                                            <br/>
                                             Juice
                                         </h4>
                                     </div>
@@ -257,7 +270,7 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                 {/* <WishlistModal /> */}
                 {/* <CompareModal /> */}
                 {/* <CartSidebar /> */}
-                <QuickView />
+                <QuickView/>
                 {/* <div className="container">
                     <div className="row">
                         <div className="col-xl-6">
@@ -274,14 +287,14 @@ const Products = ({ products, productFilters, fetchProduct }) => {
                     </div>
                     <div className="row">
                         <div className="col-xl-3">
-                            
+
                         </div>
                         <div className="col-md-9">
-                            
 
-                            
 
-                            
+
+
+
                         </div>
                     </div>
                 </div> */}
@@ -290,15 +303,10 @@ const Products = ({ products, productFilters, fetchProduct }) => {
     );
 };
 
-const mapStateToProps = (state) => ({
-    products: state.products,
-    productFilters: state.productFilters,
-});
-
-const mapDidpatchToProps = {
+const mapDispatchToProps = {
     // openCart,
     fetchProduct,
     // fetchMoreProduct,
 };
 
-export default connect(mapStateToProps, mapDidpatchToProps)(Products);
+export default connect(state => state, mapDispatchToProps)(Products);

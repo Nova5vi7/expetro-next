@@ -15,7 +15,7 @@ import StorageWrapper from "../components/ecommerce/storage-wrapper";
 import '../public/assets/sass/vendors/bootstrap.min.css';
 import '../public/assets/sass/vendors/uicons-regular-straight.css';
 import "../public/assets/sass/main.scss";
-import store from "../redux/store";
+import {wrapper} from "../redux/store";
 import Preloader from "./../components/elements/Preloader";
 
 
@@ -34,13 +34,10 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             {!loading ? (
-                <Provider store={store}>
-                    <StorageWrapper>
-                       
-                            <Component {...pageProps} />
-                            <ToastContainer />
-                    </StorageWrapper>
-                </Provider>
+                <StorageWrapper>
+                    <Component {...pageProps} />
+                    <ToastContainer />
+                </StorageWrapper>
             ) : (
                 <Preloader />
             )}
@@ -48,4 +45,4 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
