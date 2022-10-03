@@ -5,6 +5,8 @@ import * as Types from '../constants/actionTypes'
 
 // Fetch Product fetchProduct
 export const fetchProduct = (searchTerm, url, filters) => async dispatch => {
+    console.log('tyt')
+
     try {
         const sendRequest = await fetch(url)
         const data = await sendRequest.json()

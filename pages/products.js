@@ -1,5 +1,5 @@
 import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {connect} from "react-redux";
 import {wrapper} from '../redux/store';
 import ShowSelect from "../components/ecommerce/Filter/ShowSelect";
@@ -16,33 +16,46 @@ import Layout from "./../components/layout/Layout";
 import {fetchProduct} from "../redux/action/product";
 import * as Types from "../redux/constants/actionTypes";
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+export const getServerSideProps = wrapper.getServerSideProps((store) => async (context) => {
+    const {page} = context.query;
     const sendRequest = await fetch('http://localhost:3000/static/product.json')
     const data = await sendRequest.json()
+
+    // fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
 
     store.dispatch({
         type: Types.FETCHED_PRODUCT,
         payload: { products: data }
     })
+    if(page) {
+        return {
+            props: {
+                page
+            }
+        }
+    }
 });
 
-const Products = ({products, productFilters, fetchProduct}) => {
-    console.log(products, productFilters);
+const Products = ({products, productFilters, fetchProduct, page}) => {
 
     let Router = useRouter()
     let searchTerm = Router.query.search
     let showLimit = 12
     let showPagination = 4
 
+    let [startEvent, setStartEvent] = useState(false);
     let [pagination, setPagination] = useState([]);
     let [limit, setLimit] = useState(showLimit);
-    let [pages, setPages] = useState(Math.ceil(products.items.length / limit));
-    let [currentPage, setCurrentPage] = useState(1);
+    let [pages, setPages] = useState( Math.ceil(products.items.length / limit));
+    let [currentPage, setCurrentPage] = useState(Number(page) ||1);
 
     useEffect(() => {
-        //TODO спробувати запускати фечінг тільки тоді коли змінюється параметри фільтрів
-        // fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
+        if(startEvent) {
+            fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
+        }
+
         cratePagination();
+        setStartEvent(true)
     }, [productFilters, limit, pages, products.items.length]);
 
     const cratePagination = () => {
