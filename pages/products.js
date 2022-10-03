@@ -41,7 +41,7 @@ const Products = ({products, productFilters, fetchProduct}) => {
 
     useEffect(() => {
         //TODO спробувати запускати фечінг тільки тоді коли змінюється параметри фільтрів
-        fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
+        // fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
         cratePagination();
     }, [productFilters, limit, pages, products.items.length]);
 
