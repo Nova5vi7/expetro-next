@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { connect } from "react-redux";
 import { updateProductFilters } from "../../../redux/action/productFiltersAction";
 
@@ -14,6 +14,7 @@ const Tags = ({ updateProductFilters }) => {
         { value: "salad" },
         { value: "appetizer" },
     ];
+    const startEvent = useRef(false);
     const [selectedTags, setTags] = useState([]);
     const [active, setActive] = useState(0);
     useEffect(() => {
@@ -21,7 +22,10 @@ const Tags = ({ updateProductFilters }) => {
             tags: selectedTags, //
         };
 
-        updateProductFilters(filters);
+        if(startEvent.current) {
+            updateProductFilters(filters);
+        }
+        startEvent.current = true;
     }, [selectedTags]);
 
     const handleClick = (i, target) => {

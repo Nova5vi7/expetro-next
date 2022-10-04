@@ -14,19 +14,23 @@ import QuickView from "./../components/ecommerce/QuickView";
 import SingleProduct from "./../components/ecommerce/SingleProduct";
 import Layout from "./../components/layout/Layout";
 import {fetchProduct} from "../redux/action/product";
-import * as Types from "../redux/constants/actionTypes";
+import { updateProductFilters } from "../redux/action/productFiltersAction";
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async (context) => {
     const {page} = context.query;
-    const sendRequest = await fetch('http://localhost:3000/static/product.json')
-    const data = await sendRequest.json()
+    const filters = {
+        category: "",
+        tags: [],
+        featured: "",
+        price: { min: 0, max: 500 },
+        vendor: [],
+        sizes: []
+    }
+    updateProductFilters(filters)(store.dispatch);
+    const {productFilters} = store.getState();
 
-    // fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
+    const result = await fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)(store.dispatch);
 
-    store.dispatch({
-        type: Types.FETCHED_PRODUCT,
-        payload: { products: data }
-    })
     if(page) {
         return {
             props: {
@@ -43,19 +47,22 @@ const Products = ({products, productFilters, fetchProduct, page}) => {
     let showLimit = 12
     let showPagination = 4
 
-    let [startEvent, setStartEvent] = useState(false);
+    const startEvent = useRef(false);
+
+    // let [startEvent, setStartEvent] = useState(false);
     let [pagination, setPagination] = useState([]);
     let [limit, setLimit] = useState(showLimit);
     let [pages, setPages] = useState( Math.ceil(products.items.length / limit));
     let [currentPage, setCurrentPage] = useState(Number(page) ||1);
 
     useEffect(() => {
-        if(startEvent) {
+        console.log(productFilters)
+        if(startEvent.current) {
             fetchProduct(null, 'http://localhost:3000/static/product.json', productFilters)
         }
 
         cratePagination();
-        setStartEvent(true)
+        startEvent.current = true
     }, [productFilters, limit, pages, products.items.length]);
 
     const cratePagination = () => {

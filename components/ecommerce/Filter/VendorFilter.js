@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { connect } from "react-redux";
 import { updateProductFilters } from "../../../redux/action/productFiltersAction";
 import CheckBox from "./Checkbox";
@@ -22,6 +22,7 @@ const VendorFilter = ({ updateProductFilters }) => {
     const Router = useRouter();
     const searchTerm = Router.query.search;
 
+    const startEvent = useRef(false);
     const [selectedVendor, setVendor] = useState([]);
 
     useEffect(() => {
@@ -29,7 +30,10 @@ const VendorFilter = ({ updateProductFilters }) => {
             vendor: selectedVendor
         };
 
-        updateProductFilters(filters);
+        if(startEvent.current) {
+            updateProductFilters(filters);
+        }
+        startEvent.current = true;
     }, [sizes, searchTerm]);
 
     const handleCheckBox = (event, filters, updatefilters, selectFilter, text) => {

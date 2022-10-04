@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { connect } from "react-redux";
 import { updateProductFilters } from "../../../redux/action/productFiltersAction";
 
@@ -12,8 +12,7 @@ const SizeFilter = ({ updateProductFilters }) => {
         { value: "xl" },
     ];
 
-
-
+    const startEvent = useRef(false);
     const [selectedSizes, setSizes] = useState([]);
     const [active, setActive] = useState(0);
 
@@ -22,7 +21,10 @@ const SizeFilter = ({ updateProductFilters }) => {
             sizes: selectedSizes,
         };
 
-        updateProductFilters(filters);
+        if(startEvent.current) {
+            updateProductFilters(filters);
+        }
+        startEvent.current = true;
     }, [selectedSizes]);
 
     const handleClick = (i, target) => {
