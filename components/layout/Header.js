@@ -36,77 +36,71 @@ const Header = ({
                 <div className="header-top header-top-ptb-1 d-none d-lg-block">
                     <div className="container">
                         <div className="row align-items-center">
-                            <div className="col-xl-3 col-lg-4">
+                            <div className="col-xl-5 col-lg-6">
                                 <div className="header-info">
                                     <ul>
                                         <li>
                                             <Link href="/page-about">
-                                                <a>About Us</a>
+                                                <a>Наша історія</a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/page-account">
-                                                <a>My Account</a>
+                                            <Link href="/">
+                                                <a>Доставка</a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/shop-wishlist">
-                                                <a>Wishlist</a>
+                                            <Link href="/">
+                                                <a>Оплата</a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/page-account">
-                                                <a>Order Tracking</a>
+                                            <Link href="/">
+                                                <a>Повернення</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/">
+                                                <a>Лист побажань</a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/">
+                                                <a>Зв'язатися з нами</a>
                                             </Link>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-xl-6 col-lg-4">
+                            <div className="col-xl-3 special-text">
                                 <div className="text-center">
                                     <div id="news-flash" className="d-inline-block">
                                         <ul>
                                             <li>
-                                                Get great devices up to 50% off
-                                                <Link href="/shop-grid-right">
-                                                    <a> View details</a>
+                                                Дуууже солодкі ціни
+                                                <Link href="/">
+                                                    <a> Перейти до акції</a>
                                                 </Link>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-3 col-lg-4">
+                            <div className="col-xl-4 col-lg-6">
                                 <div className="header-info header-info-right">
                                     <ul>
                                         <li>
-                                            Need help? Call Us: <strong className="text-brand"> + 1800 900</strong>
+                                            Треба допомога - дзвони: <strong className="text-brand"> +38 (095) 223-17-10</strong>
                                         </li>
                                         <li>
                                             <Link href="/#">
                                                 <a className="language-dropdown-active">
                                                     <i className="fi-rs-world"></i>
-                                                    English
+                                                    Українська
                                                     <i className="fi-rs-angle-small-down"></i>
                                                 </a>
                                             </Link>
                                             <ul className="language-dropdown">
-                                                <li>
-                                                    <Link href="/#">
-                                                        <a>
-                                                            <img src="/assets/imgs/theme/flag-fr.png" alt="" />
-                                                            Français
-                                                        </a>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link href="/#">
-                                                        <a>
-                                                            <img src="/assets/imgs/theme/flag-dt.png" alt="" />
-                                                            Deutsch
-                                                        </a>
-                                                    </Link>
-                                                </li>
                                                 <li>
                                                     <Link href="/#">
                                                         <a>
@@ -115,30 +109,13 @@ const Header = ({
                                                         </a>
                                                     </Link>
                                                 </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a className="language-dropdown-active" href="#">
-                                                USD <i className="fi-rs-angle-small-down"></i>
-                                            </a>
-                                            <ul className="language-dropdown">
                                                 <li>
-                                                    <a href="#">
-                                                        <img src="/assets/imgs/theme/flag-fr.png" alt="" />
-                                                        INR
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="/assets/imgs/theme/flag-dt.png" alt="" />
-                                                        MBP
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="/assets/imgs/theme/flag-ru.png" alt="" />
-                                                        EU
-                                                    </a>
+                                                    <Link href="/#">
+                                                        <a>
+                                                            <img src="/assets/imgs/theme/flag-en.png" alt="" />
+                                                            English
+                                                        </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </li>
@@ -154,7 +131,7 @@ const Header = ({
                             <div className="logo logo-width-1">
                                 <Link href="/">
                                     <a>
-                                        <img src="/assets/imgs/theme/logo.svg" alt="logo" />
+                                        <img src="/assets/imgs/theme/expetro-logo.png" alt="logo" />
                                     </a>
                                 </Link>
                             </div>
@@ -185,19 +162,6 @@ const Header = ({
                                             </form>
                                         </div>
                                         <div className="header-action-icon-2">
-                                            <Link href="/shop-compare">
-                                                <a>
-                                                    <img className="svgInject" alt="Evara" src="/assets/imgs/theme/icons/icon-compare.svg" />
-                                                    <span className="pro-count blue">{totalCompareItems}</span>
-                                                </a>
-                                            </Link>
-                                            <Link href="/shop-compare">
-                                                <a>
-                                                    <span className="lable ml-0">Compare</span>
-                                                </a>
-                                            </Link>
-                                        </div>
-                                        <div className="header-action-icon-2">
                                             <Link href="/shop-wishlist">
                                                 <a>
                                                     <img className="svgInject" alt="Evara" src="/assets/imgs/theme/icons/icon-heart.svg" />
@@ -205,7 +169,9 @@ const Header = ({
                                                 </a>
                                             </Link>
                                             <Link href="/shop-wishlist">
-                                                <span className="lable">Wishlist</span>
+                                                <a>
+                                                    <span className="lable">Wishlist</span>
+                                                </a>
                                             </Link>
                                         </div>
                                         <div className="header-action-icon-2">
@@ -220,71 +186,6 @@ const Header = ({
                                                     <span className="lable">Cart</span>
                                                 </a>
                                             </Link>
-                                        </div>
-
-                                        <div className="header-action-icon-2">
-                                            <Link href="/page-account">
-                                                <a>
-                                                    <img className="svgInject" alt="Nest" src="/assets/imgs/theme/icons/icon-user.svg" />
-                                                </a>
-                                            </Link>
-                                            <Link href="/page-account">
-                                                <a>
-                                                    <span className="lable ml-0">Account</span>
-                                                </a>
-                                            </Link>
-                                            <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
-                                                <ul>
-                                                    <li>
-                                                        <Link href="/page-account">
-                                                            <a>
-                                                                <i className="fi fi-rs-user mr-10"></i>
-                                                                My Account
-                                                            </a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-account">
-                                                            <a>
-                                                                <i className="fi fi-rs-location-alt mr-10"></i>
-                                                                Order Tracking
-                                                            </a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-account">
-                                                            <a>
-                                                                <i className="fi fi-rs-label mr-10"></i>
-                                                                My Voucher
-                                                            </a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-wishlist">
-                                                            <a>
-                                                                <i className="fi fi-rs-heart mr-10"></i>
-                                                                My Wishlist
-                                                            </a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-account">
-                                                            <a>
-                                                                <i className="fi fi-rs-settings-sliders mr-10"></i>
-                                                                Setting
-                                                            </a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-login">
-                                                            <a>
-                                                                <i className="fi fi-rs-sign-out mr-10"></i>
-                                                                Sign out
-                                                            </a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -306,7 +207,7 @@ const Header = ({
                                 <div className="main-categori-wrap d-none d-lg-block">
                                     <a className="categories-button-active" onClick={handleToggle}>
                                         <span className="fi-rs-apps"></span>
-                                        <span className="et">Browse</span> All Categories
+                                        <span className="et">Дивитись каталог</span>
                                         <i className="fi-rs-angle-down"></i>
                                     </a>
 
@@ -370,249 +271,40 @@ const Header = ({
                                             <li className="hot-deals">
                                                 <img src="/assets/imgs/theme/icons/icon-hot.svg" alt="hot deals" />
                                                 <Link href="/products">
-                                                    <a>Hot Deals</a>
+                                                    <a>Вигідні пропозиції</a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/">
-                                                    <a className="active">
-                                                        Home
-                                                        <i className="fi-rs-angle-down"></i>
-                                                    </a>
-                                                </Link>
-                                                <ul className="sub-menu">
-                                                    <li>
-                                                        <Link href="/">
-                                                            <a>Home 1</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/index-2">
-                                                            <a>Home 2</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/index-3">
-                                                            <a>Home 3</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/index-4">
-                                                            <a>Home 4</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <Link href="/page-about">
-                                                    <a>About</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/shop-grid-right">
+                                                    {/*className="active"*/}
                                                     <a>
-                                                        Shop
-                                                        <i className="fi-rs-angle-down"></i>
+                                                        Іграшки
                                                     </a>
                                                 </Link>
-                                                <ul className="sub-menu">
-                                                    <li>
-                                                        <Link href="/shop-grid-right">
-                                                            <a>Shop Grid – Right Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/products">
-                                                            <a>Shop Grid – Left Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-list-right">
-                                                            <a>Shop List – Right Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-list-left">
-                                                            <a>Shop List – Left Sidebar</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-fullwidth">
-                                                            <a>Shop - Wide</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-filter">
-                                                            <a>Shop - Filter</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-wishlist">
-                                                            <a>Shop – Wishlist</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-cart">
-                                                            <a>Shop – Cart</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-checkout">
-                                                            <a>Shop – Checkout</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/shop-compare">
-                                                            <a>Shop – Compare</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
                                             </li>
-
                                             <li>
-                                                <a href="#">
-                                                    Vendors <i className="fi-rs-angle-down"></i>
-                                                </a>
-                                                <ul className="sub-menu">
-                                                    <li>
-                                                        <Link href="/vendors">
-                                                            <a>Vendors Grid</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/vendors-list">
-                                                            <a>Vendors List</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/vendor-dashboard">
-                                                            <a>Vendor Dashboard</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/vendor-guide">
-                                                            <a>Vendor Guide</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
+                                                <Link href="/">
+                                                    <a>Підголівники</a>
+                                                </Link>
                                             </li>
-
-                                            <li className="position-static">
-                                                <Link href="/#">
+                                            <li>
+                                                <Link href='/products'>
                                                     <a>
-                                                        Mega menu
-                                                        <i className="fi-rs-angle-down"></i>
+                                                        Посуд
                                                     </a>
                                                 </Link>
-                                                <ul className="mega-menu">
-                                                    <li className="sub-mega-menu sub-mega-menu-width-22">
-                                                        <a className="menu-title" href="#">
-                                                            Fruit & Vegetables
-                                                        </a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Meat & Poultry</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Fresh Vegetables</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Herbs & Seasonings</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Cuts & Sprouts</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Exotic Fruits & Veggies</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Packaged Produce</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="sub-mega-menu sub-mega-menu-width-22">
-                                                        <a className="menu-title" href="#">
-                                                            Breakfast & Dairy
-                                                        </a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Milk & Flavoured Milk</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Butter and Margarine</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Eggs Substitutes</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Marmalades</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Sour Cream</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Cheese</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="sub-mega-menu sub-mega-menu-width-22">
-                                                        <a className="menu-title" href="#">
-                                                            Meat & Seafood
-                                                        </a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Breakfast Sausage</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Dinner Sausage</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Chicken</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Sliced Deli Meat</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Wild Caught Fillets</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Crab and Shellfish</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="sub-mega-menu sub-mega-menu-width-34">
-                                                        <div className="menu-banner-wrap">
-                                                            <a href="#">
-                                                                <img src="/assets/imgs/banner/banner-menu.png" alt="Nest" />
-                                                            </a>
-                                                            <div className="menu-banner-content">
-                                                                <h4>Hot deals</h4>
-                                                                <h3>
-                                                                    Don't miss
-                                                                    <br />
-                                                                    Trending
-                                                                </h3>
-                                                                <div className="menu-banner-price">
-                                                                    <span className="new-price text-success">Save to 50%</span>
-                                                                </div>
-                                                                <div className="menu-banner-btn">
-                                                                    <a href="#">Shop now</a>
-                                                                </div>
-                                                            </div>
-                                                            <div className="menu-banner-discount">
-                                                                <h3>
-                                                                    <span>25%</span>
-                                                                    off
-                                                                </h3>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
+                                            </li>
+                                            <li>
+                                                <Link href='/products'>
+                                                    <a>
+                                                        Розвиток та творчість
+                                                    </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <Link href="/blog-category-grid">
                                                     <a>
-                                                        Blog
+                                                        Блог
                                                         <i className="fi-rs-angle-down"></i>
                                                     </a>
                                                 </Link>
@@ -665,58 +357,8 @@ const Header = ({
                                                 </ul>
                                             </li>
                                             <li>
-                                                <Link href="/#">
-                                                    <a>
-                                                        Pages
-                                                        <i className="fi-rs-angle-down"></i>
-                                                    </a>
-                                                </Link>
-                                                <ul className="sub-menu">
-                                                    <li>
-                                                        <Link href="/page-about">
-                                                            <a>About Us</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-contact">
-                                                            <a>Contact</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-account">
-                                                            <a>My Account</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-login-register">
-                                                            <a>login/register</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-purchase-guide">
-                                                            <a>Purchase Guide</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-privacy-policy">
-                                                            <a>Privacy Policy</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-terms">
-                                                            <a>Terms of Service</a>
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link href="/page-404">
-                                                            <a>404 Page</a>
-                                                        </Link>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
                                                 <Link href="/page-contact">
-                                                    <a>Contact</a>
+                                                    <a>Контакт</a>
                                                 </Link>
                                             </li>
                                         </ul>

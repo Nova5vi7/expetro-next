@@ -171,35 +171,23 @@ const Footer = () => {
                                     <div className="logo  mb-30">
                                         <Link href="/"><a className="mb-15">
                                             <img
-                                                src="/assets/imgs/theme/logo.svg"
+                                                src="/assets/imgs/theme/expetro-logo.png"
                                                 alt="logo"
                                             />
                                         </a>
                                         </Link>
                                         <p className="font-lg text-heading">
-                                            Awesome grocery store website
-                                            template
+                                            2022 © Антистрес подарунки та м'які іграшки - купити в інтернет магазині Expetro™ Харків з доставкою в Київ, Одесу, Львів, Дніпро, Запоріжжя
                                         </p>
                                     </div>
                                     <ul className="contact-infor">
                                         <li>
                                             <img
-                                                src="/assets/imgs/theme/icons/icon-location.svg"
-                                                alt=""
-                                            />
-                                            <strong>Address: </strong>{" "}
-                                            <span>
-                                                5171 W Campbell Ave undefined
-                                                Kent, Utah 53127 United States
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <img
                                                 src="/assets/imgs/theme/icons/icon-contact.svg"
                                                 alt=""
                                             />
-                                            <strong>Call Us:</strong>
-                                            <span>(+91) - 540-025-124553</span>
+                                            <strong>Дзвоніть:</strong>
+                                            <span>+38 (095) 223-17-10</span>
                                         </li>
                                         <li>
                                             <img
@@ -226,115 +214,52 @@ const Footer = () => {
                                 className="footer-link-widget col  wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".1s"
                             >
-                                <h4 className="widget-title">Company</h4>
+                                <h4 className="widget-title">Компанія</h4>
                                 <ul className="footer-list  mb-sm-5 mb-md-0">
                                     <li>
-                                        <a href="#">About Us</a>
+                                        <a href="#">Наша історія</a>
                                     </li>
                                     <li>
-                                        <a href="#">Delivery Information</a>
+                                        <a href="#">Доставка</a>
                                     </li>
                                     <li>
-                                        <a href="#">Privacy Policy</a>
+                                        <a href="#">Оплата</a>
                                     </li>
                                     <li>
-                                        <a href="#">Terms &amp; Conditions</a>
+                                        <a href="#">Повернення</a>
                                     </li>
                                     <li>
-                                        <a href="#">Contact Us</a>
+                                        <a href="#">Лист побажань</a>
                                     </li>
                                     <li>
-                                        <a href="#">Support Center</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Careers</a>
+                                        <a href="#">Зв'язатись з нами</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div
-                                className="footer-link-widget col  wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".2s"
-                            >
-                                <h4 className="widget-title ">Account</h4>
-                                <ul className="footer-list  mb-sm-5 mb-md-0">
-                                    <li>
-                                        <a href="#">Sign In</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">View Cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">My Wishlist</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Track My Order</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Help Ticket</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Shipping Details</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Compare products</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div
-                                className="footer-link-widget col  wow animate__animated animate__fadeInUp"
-                                data-wow-delay=".3s"
-                            >
-                                <h4 className="widget-title ">Corporate</h4>
-                                <ul className="footer-list  mb-sm-5 mb-md-0">
-                                    <li>
-                                        <a href="#">Become a Vendor</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Affiliate Program</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Farm Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Farm Careers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Our Suppliers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Accessibility</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Promotions</a>
-                                    </li>
-                                </ul>
-                            </div>
+
                             <div
                                 className="footer-link-widget col  wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".4s"
                             >
-                                <h4 className="widget-title ">Popular</h4>
+                                <h4 className="widget-title ">Популярні</h4>
                                 <ul className="footer-list  mb-sm-5 mb-md-0">
                                     <li>
-                                        <a href="#">Milk & Flavoured Milk</a>
+                                        <a href="#">Іграшки</a>
                                     </li>
                                     <li>
-                                        <a href="#">Butter and Margarine</a>
+                                        <a href="#">Підголівники</a>
                                     </li>
                                     <li>
-                                        <a href="#">Eggs Substitutes</a>
+                                        <a href="#">Посуд</a>
                                     </li>
                                     <li>
-                                        <a href="#">Marmalades</a>
+                                        <a href="#">Розвиток та творчість</a>
                                     </li>
                                     <li>
-                                        <a href="#">Sour Cream and Dips</a>
+                                        <a href="#">Блог</a>
                                     </li>
                                     <li>
-                                        <a href="#">Tea & Kombucha</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cheese</a>
+                                        <a href="#">Контакт</a>
                                     </li>
                                 </ul>
                             </div>
@@ -342,27 +267,7 @@ const Footer = () => {
                                 className="footer-link-widget widget-install-app col  wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".5s"
                             >
-                                <h4 className="widget-title ">Install App</h4>
-                                <p className="">From App Store or Google Play</p>
-                                <div className="download-app ">
-                                    <a
-                                        href="#"
-                                        className="hover-up mb-sm-2 mb-lg-0"
-                                    >
-                                        <img
-                                            className="active"
-                                            src="/assets/imgs/theme/app-store.jpg"
-                                            alt=""
-                                        />
-                                    </a>
-                                    <a href="#" className="hover-up mb-sm-2">
-                                        <img
-                                            src="/assets/imgs/theme/google-play.jpg"
-                                            alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <p className="mb-20 ">Secured Payment Gateways</p>
+                                <p className="mb-20 ">Засоби розрахунку</p>
                                 <img
                                     className=""
                                     src="/assets/imgs/theme/payment-method.png"
@@ -389,7 +294,7 @@ const Footer = () => {
                             </p>
                         </div>
                         <div className="col-xl-4 col-lg-6 text-center d-none d-xl-block">
-                            <div className="hotline d-lg-inline-flex mr-30">
+                            <div className="hotline d-lg-inline-flex">
                                 <img
                                     src="/assets/imgs/theme/icons/phone-call.svg"
                                     alt="hotline"
@@ -410,7 +315,7 @@ const Footer = () => {
                         </div>
                         <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
                             <div className="mobile-social-icon">
-                                <h6>Follow Us</h6>
+                                <h6>Підписуйтесь</h6>
                                 <a href="#">
                                     <img
                                         src="/assets/imgs/theme/icons/icon-facebook-white.svg"

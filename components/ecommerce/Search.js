@@ -25,19 +25,6 @@ const Search = () => {
     return (
         <>
             <form>
-                <select className="select-active">
-                    <option>All Categories</option>
-                    <option>Women's</option>
-                    <option>Men's</option>
-                    <option>Cellphones</option>
-                    <option>Computer</option>
-                    <option>Electronics</option>
-                    <option> Accessories</option>
-                    <option>Home & Garden</option>
-                    <option>Luggage</option>
-                    <option>Shoes</option>
-                    <option>Mother & Kids</option>
-                </select>
                 <input
                     value={searchTerm}
                     onKeyDown={handleInput}
