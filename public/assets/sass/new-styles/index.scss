@@ -1,0 +1,42 @@
+.header-style-1 .header-top-ptb-1 {
+  position: relative;
+  @media (max-width: 1199px) and (min-width: 992px) {
+    padding-bottom: 35px;
+  }
+}
+
+.special-text {
+  @media (max-width: 1199px) and (min-width: 992px) {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+.product-card {
+  margin-bottom: 30px;
+  @media (min-width: 1200px) {
+    width: 25%;
+  }
+
+  .product-cart-wrap {
+    height: 100%;
+  }
+}
+
+.product-cart-wrap .product-card-bottom .add-cart .add {
+  display: flex;
+  align-items: center;
+}
+
+footer .hotline {
+  &:first-child {
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 1362px) {
+    &:first-child {
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -4,28 +4,28 @@ import searchItemsByText from '../../util/searchItemsByText'
 import * as Types from '../constants/actionTypes'
 
 // Fetch Product fetchProduct
-export const fetchProduct = (searchTerm, url, filters) => async dispatch => {
-    try {
+export const fetchProduct = (searchTerm, url, filters) => {
+    return async dispatch => {
+        console.log('productFilters dispatch')
 
-        const sendRequest = await fetch(url)
-        const data = await sendRequest.json()
+        try {
+            const sendRequest = await fetch(url)
+            const data = await sendRequest.json()
 
-        window.products = data
+            const searchedItems = searchItemsByText(searchTerm, data)
+            const filteredList = filterProductList(searchedItems, filters)
 
-        const searchedItems = searchItemsByText(searchTerm, data)
-        const filteredList = filterProductList(searchedItems, filters)
+            dispatch({
+                type: Types.FETCHED_PRODUCT,
+                payload: { products: filteredList }
+            })
 
-        dispatch({
-            type: Types.FETCHED_PRODUCT,
-            payload: { products: filteredList }
-        })
+        } catch (error) {
+            console.log(error)
+        }
 
-    } catch (error) {
-        console.log(error)
     }
-
 }
-
 
 // Fetch More Product 
 export const fetchMoreProduct = (url, total) => async dispatch => {
