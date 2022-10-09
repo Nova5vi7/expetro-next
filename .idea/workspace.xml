@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e3fdd4b4-a193-410b-8d94-2f8474544a30" name="Changes" comment="added en icon and new title">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ecommerce/Filter/PriceRange.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ecommerce/Filter/PriceRange.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ecommerce/Filter/PriceRangeSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ecommerce/Filter/PriceRangeSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ecommerce/Filter/SizeFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ecommerce/Filter/SizeFilter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ecommerce/Filter/SortSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ecommerce/Filter/SortSelect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ecommerce/Filter/Tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ecommerce/Filter/Tags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ecommerce/Filter/VendorFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ecommerce/Filter/VendorFilter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/action/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/action/product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +62,7 @@
       <workItem from="1664520870902" duration="5000" />
       <workItem from="1664862547450" duration="1205000" />
       <workItem from="1664911981116" duration="5820000" />
+      <workItem from="1664950915382" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary="setting styles, added ssr test and added hardcode content">
       <created>1664126615913</created>
