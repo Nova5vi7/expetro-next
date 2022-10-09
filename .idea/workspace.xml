@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e3fdd4b4-a193-410b-8d94-2f8474544a30" name="Changes" comment="added en icon and new title">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

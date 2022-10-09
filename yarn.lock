@@ -10,16 +10,16 @@
     "regenerator-runtime" "^0.13.4"
 
 "@bedrock-layout/use-forwarded-ref@^1.1.4":
-  "integrity" "sha512-z8vkgIVs4kE4uOprt3P7Q5fzSjnpi8KN7bPvXL2qpjeFM4XV4gjR/1TvlDRtHD1owqswpFiF3X2l7BzgasziIw=="
-  "resolved" "https://registry.npmjs.org/@bedrock-layout/use-forwarded-ref/-/use-forwarded-ref-1.3.0.tgz"
-  "version" "1.3.0"
+  "integrity" "sha512-6O4uqkoogYQYT8Vx0HEmusrdxvIgj9/dhFQzPrCWzA87A3yzD+Jr1uVgoyt7VJe86X82NLRyP9XBx957W3Lnkw=="
+  "resolved" "https://registry.npmjs.org/@bedrock-layout/use-forwarded-ref/-/use-forwarded-ref-1.6.0.tgz"
+  "version" "1.6.0"
   dependencies:
-    "@bedrock-layout/use-stateful-ref" "^1.2.1"
+    "@bedrock-layout/use-stateful-ref" "^1.4.0"
 
-"@bedrock-layout/use-stateful-ref@^1.2.1":
-  "integrity" "sha512-FH9EX8Avxw46ty+BURyTpf7T3rad5faLg6iX1retSNRK/qmftoLSDIoTShJDxomnKgHz+9UNmQ4PQXhA0LeA9Q=="
-  "resolved" "https://registry.npmjs.org/@bedrock-layout/use-stateful-ref/-/use-stateful-ref-1.2.1.tgz"
-  "version" "1.2.1"
+"@bedrock-layout/use-stateful-ref@^1.4.0":
+  "integrity" "sha512-olGeFJwOCx38+qNsJ2AHm4IFYqFtD5JMcQkUW9VICxlFzmodfP/tTiqhcFbSfUc/62Qz7iQ2bp5eG+ptT2sDGA=="
+  "resolved" "https://registry.npmjs.org/@bedrock-layout/use-stateful-ref/-/use-stateful-ref-1.4.0.tgz"
+  "version" "1.4.0"
 
 "@next/env@12.1.6":
   "integrity" "sha512-Te/OBDXFSodPU6jlXYPAXpmZr/AkG6DCATAxttQxqOWaq6eDFX25Db3dK0120GZrSZmv4QCe9KsZmJKDbWs4OA=="
@@ -37,9 +37,9 @@
   "version" "12.1.6"
 
 "@popperjs/core@^2.10.1", "@popperjs/core@^2.6.0":
-  "integrity" "sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.5.tgz"
-  "version" "2.11.5"
+  "integrity" "sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz"
+  "version" "2.11.6"
 
 "@react-aria/ssr@^3.0.1":
   "integrity" "sha512-wwJFdkl+Q8NU5yJ4NvdAOqx5LM3QtUVoSjuK7Ey8jZ4WS4bB0EqT3Kr3IInBs257HzZ5nXCiKXKE4NGXXuIRWA=="
@@ -747,7 +747,7 @@
     "loose-envify" "^1.0.0"
 
 "wowjs@^1.1.3":
-  "integrity" "sha1-RA/Bu0x+iWhA7keXIpaitZB1rL0= sha512-HQp1gi56wYmjOYYOMZ08TnDGpT+AO21RJVa0t1NJ3jU8l3dMyP+sY7TO/lilzVp4JFjW88bBY87RnpxdpSKofA=="
+  "integrity" "sha1-RA/Bu0x+iWhA7keXIpaitZB1rL0=sha512-HQp1gi56wYmjOYYOMZ08TnDGpT+AO21RJVa0t1NJ3jU8l3dMyP+sY7TO/lilzVp4JFjW88bBY87RnpxdpSKofA==sha512-HQp1gi56wYmjOYYOMZ08TnDGpT+AO21RJVa0t1NJ3jU8l3dMyP+sY7TO/lilzVp4JFjW88bBY87RnpxdpSKofA== sha512-HQp1gi56wYmjOYYOMZ08TnDGpT+AO21RJVa0t1NJ3jU8l3dMyP+sY7TO/lilzVp4JFjW88bBY87RnpxdpSKofA=="
   "resolved" "https://registry.npmjs.org/wowjs/-/wowjs-1.1.3.tgz"
   "version" "1.1.3"
   dependencies:
