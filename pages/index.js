@@ -1,3 +1,4 @@
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import CategoryTab from "../components/ecommerce/categoryTab";
 import FeatchDeals from "../components/ecommerce/fetchDeals";
 import FeatchTab from "../components/ecommerce/fetchTab";
@@ -16,12 +17,11 @@ import {server} from "../config";
 export default function Home({catAll, active}) {
     return (
         <>
-
             <Layout noBreadcrumb="d-none">
                 <section className="home-slider position-relative mb-30">
                     <div className="container">
                         <div className="home-slide-cover mt-30">
-                            <Intro1 />
+                            <Intro1/>
                         </div>
                     </div>
                 </section>
@@ -57,7 +57,7 @@ export default function Home({catAll, active}) {
                         </div>
                         <div className="carausel-10-columns-cover position-relative">
                             <div className="carausel-10-columns" id="carausel-10-columns">
-                                <CategorySlider />
+                                <CategorySlider/>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ export default function Home({catAll, active}) {
                 <section className="banners mb-25">
                     <div className="container">
                         <div className="row">
-                            <Banner5 />
+                            <Banner5/>
                         </div>
                     </div>
                 </section>
@@ -79,7 +79,7 @@ export default function Home({catAll, active}) {
                     </div>
                 </section>
 
-                <QuickView />
+                <QuickView/>
             </Layout>
         </>
     );
@@ -92,6 +92,10 @@ export async function getServerSideProps(context) {
     const active = '1'
 
     return {
-        props: {catAll, active}, // will be passed to the page component as props
+        props: {
+            catAll,
+            active,
+            ...(await serverSideTranslations(context.locale, ['header']))
+        }, // will be passed to the page component as props
     }
 }

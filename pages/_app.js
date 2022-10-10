@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { appWithTranslation } from 'next-i18next';
 // import "react-input-range/lib/css/index.css";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import { Provider } from "react-redux";
@@ -18,8 +19,7 @@ import "../public/assets/sass/main.scss";
 import {wrapper} from "../redux/store";
 import Preloader from "./../components/elements/Preloader";
 
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }, ...props) {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true);
@@ -45,4 +45,4 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default wrapper.withRedux(MyApp);
+export default appWithTranslation(wrapper.withRedux(MyApp));

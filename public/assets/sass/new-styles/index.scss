@@ -5,6 +5,18 @@
   }
 }
 
+.language-dropdown-active {
+  pointer-events: none;
+}
+
+.header-info > ul > li > ul.language-dropdown {
+  min-width: 130px;
+}
+
+.language-dropdown-trigger {
+  min-width: 99px;
+}
+
 .special-text {
   @media (max-width: 1199px) and (min-width: 992px) {
     position: absolute;

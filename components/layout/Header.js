@@ -1,18 +1,29 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, {useEffect, useState} from "react";
+import {useRouter} from "next/router";
+import {useTranslation} from 'next-i18next'
+import {connect} from "react-redux";
 import CategoryProduct2 from "../ecommerce/Filter/CategoryProduct2";
 import CategoryProduct3 from "../ecommerce/Filter/CategoryProduct3";
 import Search from "../ecommerce/Search";
 
+const languageMap = {
+    'uk': 'Українська',
+    'en': 'English',
+    'ru': 'Русский'
+}
+
 const Header = ({
-    totalCartItems,
-    totalCompareItems,
-    toggleClick,
-    totalWishlistItems,
-}) => {
+                    totalCartItems,
+                    totalCompareItems,
+                    toggleClick,
+                    totalWishlistItems,
+                }) => {
     const [isToggled, setToggled] = useState(false);
     const [scroll, setScroll] = useState(0);
+    const {locale, locales, asPath} = useRouter();
+    const {t} = useTranslation('header')
+    console.log(locale, locales, asPath)
 
     useEffect(() => {
         document.addEventListener("scroll", () => {
@@ -41,7 +52,7 @@ const Header = ({
                                     <ul>
                                         <li>
                                             <Link href="/page-about">
-                                                <a>Наша історія</a>
+                                                <a>{t('links_top')}</a>
                                             </Link>
                                         </li>
                                         <li>
@@ -90,33 +101,46 @@ const Header = ({
                                 <div className="header-info header-info-right">
                                     <ul>
                                         <li>
-                                            Треба допомога - дзвони: <strong className="text-brand"> +38 (095) 223-17-10</strong>
+                                            Треба допомога - дзвони: <strong className="text-brand"> +38 (095)
+                                            223-17-10</strong>
                                         </li>
-                                        <li>
-                                            <Link href="/#">
+                                        <li className='language-dropdown-trigger'>
+                                            <Link href="/">
                                                 <a className="language-dropdown-active">
                                                     <i className="fi-rs-world"></i>
-                                                    Українська
+                                                    {languageMap[locale]}
                                                     <i className="fi-rs-angle-small-down"></i>
                                                 </a>
                                             </Link>
                                             <ul className="language-dropdown">
-                                                <li>
-                                                    <Link href="/#">
-                                                        <a>
-                                                            <img src="/assets/imgs/theme/flag-ru.png" alt="" />
-                                                            Pусский
-                                                        </a>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link href="/#">
-                                                        <a>
-                                                            <img src="/assets/imgs/theme/flag-en.png" alt="" />
-                                                            English
-                                                        </a>
-                                                    </Link>
-                                                </li>
+                                                {locales.map((locale, i) => {
+                                                    return (
+                                                        <li key={i}>
+                                                            <Link href={asPath} locale={locale}>
+                                                                <a>
+                                                                    <img src={`/assets/imgs/theme/flag-${locale}.webp`} alt={`${locale}`} />
+                                                                    {languageMap[locale]}
+                                                                </a>
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                })}
+                                                {/*<li>*/}
+                                                {/*    <Link href="">*/}
+                                                {/*        <a>*/}
+                                                {/*            <img src="/assets/imgs/theme/flag-ru.png" alt="" />*/}
+                                                {/*            Pусский*/}
+                                                {/*        </a>*/}
+                                                {/*    </Link>*/}
+                                                {/*</li>*/}
+                                                {/*<li>*/}
+                                                {/*    <Link href="en">*/}
+                                                {/*        <a>*/}
+                                                {/*            <img src="/assets/imgs/theme/flag-en.png" alt="" />*/}
+                                                {/*            English*/}
+                                                {/*        </a>*/}
+                                                {/*    </Link>*/}
+                                                {/*</li>*/}
                                             </ul>
                                         </li>
                                     </ul>
@@ -131,13 +155,13 @@ const Header = ({
                             <div className="logo logo-width-1">
                                 <Link href="/">
                                     <a>
-                                        <img src="/assets/imgs/theme/expetro-logo.png" alt="logo" />
+                                        <img src="/assets/imgs/theme/expetro-logo.png" alt="logo"/>
                                     </a>
                                 </Link>
                             </div>
                             <div className="header-right">
                                 <div className="search-style-2">
-                                    <Search />
+                                    <Search/>
                                 </div>
                                 <div className="header-action-right">
                                     <div className="header-action-2">
@@ -164,7 +188,8 @@ const Header = ({
                                         <div className="header-action-icon-2">
                                             <Link href="/shop-wishlist">
                                                 <a>
-                                                    <img className="svgInject" alt="Evara" src="/assets/imgs/theme/icons/icon-heart.svg" />
+                                                    <img className="svgInject" alt="Evara"
+                                                         src="/assets/imgs/theme/icons/icon-heart.svg"/>
                                                     <span className="pro-count blue">{totalWishlistItems}</span>
                                                 </a>
                                             </Link>
@@ -177,7 +202,7 @@ const Header = ({
                                         <div className="header-action-icon-2">
                                             <Link href="/shop-cart">
                                                 <a className="mini-cart-icon">
-                                                    <img alt="Evara" src="/assets/imgs/theme/icons/icon-cart.svg" />
+                                                    <img alt="Evara" src="/assets/imgs/theme/icons/icon-cart.svg"/>
                                                     <span className="pro-count blue">{totalCartItems}</span>
                                                 </a>
                                             </Link>
@@ -193,13 +218,14 @@ const Header = ({
                         </div>
                     </div>
                 </div>
-                <div className={scroll ? "header-bottom header-bottom-bg-color sticky-bar stick" : "header-bottom header-bottom-bg-color sticky-bar"}>
+                <div
+                    className={scroll ? "header-bottom header-bottom-bg-color sticky-bar stick" : "header-bottom header-bottom-bg-color sticky-bar"}>
                     <div className="container">
                         <div className="header-wrap header-space-between position-relative">
                             <div className="logo logo-width-1 d-block d-lg-none">
                                 <Link href="/">
                                     <a>
-                                        <img src="/assets/imgs/theme/logo.svg" alt="logo" />
+                                        <img src="/assets/imgs/theme/logo.svg" alt="logo"/>
                                     </a>
                                 </Link>
                             </div>
@@ -211,19 +237,20 @@ const Header = ({
                                         <i className="fi-rs-angle-down"></i>
                                     </a>
 
-                                    <div className={isToggled ? "categories-dropdown-wrap categories-dropdown-active-large font-heading open" : "categories-dropdown-wrap categories-dropdown-active-large font-heading"}>
+                                    <div
+                                        className={isToggled ? "categories-dropdown-wrap categories-dropdown-active-large font-heading open" : "categories-dropdown-wrap categories-dropdown-active-large font-heading"}>
                                         <div className="d-flex categori-dropdown-inner">
-                                            <CategoryProduct2 />
-                                            <CategoryProduct3 />
+                                            <CategoryProduct2/>
+                                            <CategoryProduct3/>
                                         </div>
-                                        <div className="more_slide_open" style={{ display: "none" }}>
+                                        <div className="more_slide_open" style={{display: "none"}}>
                                             <div className="d-flex categori-dropdown-inner">
                                                 <ul>
                                                     <li>
                                                         <Link href="/products">
                                                             <a>
                                                                 {" "}
-                                                                <img src="/assets/imgs/theme/icons/icon-1.svg" alt="" />
+                                                                <img src="/assets/imgs/theme/icons/icon-1.svg" alt=""/>
                                                                 Milks and Dairies
                                                             </a>
                                                         </Link>
@@ -232,7 +259,7 @@ const Header = ({
                                                         <Link href="/products">
                                                             <a>
                                                                 {" "}
-                                                                <img src="/assets/imgs/theme/icons/icon-2.svg" alt="" />
+                                                                <img src="/assets/imgs/theme/icons/icon-2.svg" alt=""/>
                                                                 Clothing & beauty
                                                             </a>
                                                         </Link>
@@ -243,7 +270,7 @@ const Header = ({
                                                         <Link href="/products">
                                                             <a>
                                                                 {" "}
-                                                                <img src="/assets/imgs/theme/icons/icon-3.svg" alt="" />
+                                                                <img src="/assets/imgs/theme/icons/icon-3.svg" alt=""/>
                                                                 Wines & Drinks
                                                             </a>
                                                         </Link>
@@ -252,7 +279,7 @@ const Header = ({
                                                         <Link href="/products">
                                                             <a>
                                                                 {" "}
-                                                                <img src="/assets/imgs/theme/icons/icon-4.svg" alt="" />
+                                                                <img src="/assets/imgs/theme/icons/icon-4.svg" alt=""/>
                                                                 Fresh Seafood
                                                             </a>
                                                         </Link>
@@ -261,15 +288,17 @@ const Header = ({
                                             </div>
                                         </div>
                                         <div className="more_categories">
-                                            <span className="icon"></span> <span className="heading-sm-1">Show more...</span>
+                                            <span className="icon"></span> <span
+                                            className="heading-sm-1">Show more...</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block  font-heading">
+                                <div
+                                    className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block  font-heading">
                                     <nav>
                                         <ul>
                                             <li className="hot-deals">
-                                                <img src="/assets/imgs/theme/icons/icon-hot.svg" alt="hot deals" />
+                                                <img src="/assets/imgs/theme/icons/icon-hot.svg" alt="hot deals"/>
                                                 <Link href="/products">
                                                     <a>Вигідні пропозиції</a>
                                                 </Link>
@@ -366,7 +395,7 @@ const Header = ({
                                 </div>
                             </div>
                             <div className="hotline d-none d-lg-flex">
-                                <img src="/assets/imgs/theme/icons/icon-headphone.svg" alt="hotline" />
+                                <img src="/assets/imgs/theme/icons/icon-headphone.svg" alt="hotline"/>
 
                                 <p>
                                     1900 - 888<span>24/7 Support Center</span>
@@ -386,7 +415,7 @@ const Header = ({
                                     <div className="header-action-icon-2">
                                         <Link href="/shop-wishlist">
                                             <a>
-                                                <img alt="Evara" src="/assets/imgs/theme/icons/icon-heart.svg" />
+                                                <img alt="Evara" src="/assets/imgs/theme/icons/icon-heart.svg"/>
                                                 <span className="pro-count white">{totalWishlistItems}</span>
                                             </a>
                                         </Link>
@@ -394,7 +423,7 @@ const Header = ({
                                     <div className="header-action-icon-2">
                                         <Link href="/shop-cart">
                                             <a className="mini-cart-icon">
-                                                <img alt="Evara" src="/assets/imgs/theme/icons/icon-cart.svg" />
+                                                <img alt="Evara" src="/assets/imgs/theme/icons/icon-cart.svg"/>
                                                 <span className="pro-count white">{totalCartItems}</span>
                                             </a>
                                         </Link>
@@ -404,7 +433,8 @@ const Header = ({
                                                     <div className="shopping-cart-img">
                                                         <Link href="/shop-grid-right">
                                                             <a>
-                                                                <img alt="Evara" src="/assets/imgs/shop/thumbnail-3.jpg" />
+                                                                <img alt="Evara"
+                                                                     src="/assets/imgs/shop/thumbnail-3.jpg"/>
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -431,7 +461,8 @@ const Header = ({
                                                     <div className="shopping-cart-img">
                                                         <Link href="/shop-grid-right">
                                                             <a>
-                                                                <img alt="Evara" src="/assets/imgs/shop/thumbnail-4.jpg" />
+                                                                <img alt="Evara"
+                                                                     src="/assets/imgs/shop/thumbnail-4.jpg"/>
                                                             </a>
                                                         </Link>
                                                     </div>
@@ -472,7 +503,7 @@ const Header = ({
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
