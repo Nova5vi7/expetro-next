@@ -52,32 +52,32 @@ const Header = ({
                                     <ul>
                                         <li>
                                             <Link href="/page-about">
-                                                <a>{t('links_top')}</a>
+                                                <a>{t('header_section_top.link_one')}</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/">
-                                                <a>Доставка</a>
+                                                <a>{t('header_section_top.link_two')}</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/">
-                                                <a>Оплата</a>
+                                                <a>{t('header_section_top.link_three')}</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/">
-                                                <a>Повернення</a>
+                                                <a>{t('header_section_top.link_four')}</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/">
-                                                <a>Лист побажань</a>
+                                                <a>{t('wishlist')}</a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/">
-                                                <a>Зв'язатися з нами</a>
+                                                <a>{t('header_section_top.link_five')}</a>
                                             </Link>
                                         </li>
                                     </ul>
@@ -88,9 +88,9 @@ const Header = ({
                                     <div id="news-flash" className="d-inline-block">
                                         <ul>
                                             <li>
-                                                Дуууже солодкі ціни
+                                                {t("news_flash_text")}
                                                 <Link href="/">
-                                                    <a> Перейти до акції</a>
+                                                    <a> {t("news_flash_link")}</a>
                                                 </Link>
                                             </li>
                                         </ul>
@@ -101,7 +101,7 @@ const Header = ({
                                 <div className="header-info header-info-right">
                                     <ul>
                                         <li>
-                                            Треба допомога - дзвони: <strong className="text-brand"> +38 (095)
+                                            {t("phone_description")}: <strong className="text-brand"> +38 (095)
                                             223-17-10</strong>
                                         </li>
                                         <li className='language-dropdown-trigger'>
@@ -195,7 +195,7 @@ const Header = ({
                                             </Link>
                                             <Link href="/shop-wishlist">
                                                 <a>
-                                                    <span className="lable">Wishlist</span>
+                                                    <span className="lable">{t("wishlist")}</span>
                                                 </a>
                                             </Link>
                                         </div>
@@ -208,7 +208,7 @@ const Header = ({
                                             </Link>
                                             <Link href="/shop-cart">
                                                 <a>
-                                                    <span className="lable">Cart</span>
+                                                    <span className="lable">{t("cart")}</span>
                                                 </a>
                                             </Link>
                                         </div>
@@ -233,7 +233,7 @@ const Header = ({
                                 <div className="main-categori-wrap d-none d-lg-block">
                                     <a className="categories-button-active" onClick={handleToggle}>
                                         <span className="fi-rs-apps"></span>
-                                        <span className="et">Дивитись каталог</span>
+                                        <span className="et">{t("header_section_bottom.catalog_btn_text")}</span>
                                         <i className="fi-rs-angle-down"></i>
                                     </a>
 
@@ -300,40 +300,40 @@ const Header = ({
                                             <li className="hot-deals">
                                                 <img src="/assets/imgs/theme/icons/icon-hot.svg" alt="hot deals"/>
                                                 <Link href="/products">
-                                                    <a>Вигідні пропозиції</a>
+                                                    <a>{t("header_section_bottom.profitable_offers_text")}</a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/">
                                                     {/*className="active"*/}
                                                     <a>
-                                                        Іграшки
+                                                        {t("header_section_bottom.link_one")}
                                                     </a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/">
-                                                    <a>Підголівники</a>
+                                                    <a>{t("header_section_bottom.link_two")}</a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href='/products'>
                                                     <a>
-                                                        Посуд
+                                                        {t("header_section_bottom.link_three")}
                                                     </a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href='/products'>
                                                     <a>
-                                                        Розвиток та творчість
+                                                        {t("header_section_bottom.link_four")}
                                                     </a>
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/blog-category-grid">
                                                     <a>
-                                                        Блог
+                                                        {t("header_section_bottom.link_five")}
                                                         <i className="fi-rs-angle-down"></i>
                                                     </a>
                                                 </Link>
@@ -387,7 +387,7 @@ const Header = ({
                                             </li>
                                             <li>
                                                 <Link href="/page-contact">
-                                                    <a>Контакт</a>
+                                                    <a>{t("header_section_bottom.link_six")}</a>
                                                 </Link>
                                             </li>
                                         </ul>
@@ -398,7 +398,7 @@ const Header = ({
                                 <img src="/assets/imgs/theme/icons/icon-headphone.svg" alt="hotline"/>
 
                                 <p>
-                                    1900 - 888<span>24/7 Support Center</span>
+                                    1900 - 888<span>24/7 {t('support_center')}</span>
                                 </p>
                             </div>
 

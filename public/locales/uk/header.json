@@ -1,3 +1,26 @@
 {
-  "links_top": "Наша історія"
+  "header_section_top": {
+    "link_one": "Наша історія",
+    "link_two": "Доставка",
+    "link_three": "Оплата",
+    "link_four": "Повернення",
+    "link_five": "Зв'язатися з нами"
+  },
+  "news_flash_text": "Дуууже солодкі ціни",
+  "news_flash_link": "Перейти до акції",
+  "phone_description": "Треба допомога - дзвони",
+  "wishlist": "Лист побажань",
+  "cart": "Корзина",
+  "support_center": "Центр підтримки",
+  "search_text": "Пошук",
+  "header_section_bottom": {
+    "catalog_btn_text": "Дивитись каталог",
+    "profitable_offers_text": "Вигідні пропозиції",
+    "link_one": "Іграшки",
+    "link_two": "Підголівники",
+    "link_three": "Посуд",
+    "link_four": "Розвиток та творчість",
+    "link_five": "Блог",
+    "link_six": "Контакт"
+  }
 }

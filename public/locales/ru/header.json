@@ -1,3 +1,26 @@
 {
-  "links_top": "Наша история"
+  "header_section_top": {
+    "link_one": "Наша история",
+    "link_two": "Доставка",
+    "link_three": "Оплата",
+    "link_four": "Возвращение",
+    "link_five": "Связаться с нами"
+  },
+  "news_flash_text": "Оочень сладкие цены",
+  "news_flash_link": "Перейти к акции",
+  "phone_description": "Нужна помощь – колокола",
+  "wishlist": "Письмо пожеланий",
+  "cart": "Корзина",
+  "support_center": "Центр поддержки",
+  "search_text": "Поиск",
+  "header_section_bottom": {
+    "catalog_btn_text": "Смотреть каталог",
+    "profitable_offers_text": "Выгодные предложения",
+    "link_one": "Игрушки",
+    "link_two": "Подголовники",
+    "link_three": "Посуда",
+    "link_four": "Развитие и творчество",
+    "link_five": "Блог",
+    "link_six": "Контакт"
+  }
 }

@@ -1,0 +1,29 @@
+{
+  "footer_menu_titles": {
+    "title_one": "Компанія",
+    "title_two": "Популярні"
+  },
+  "footer-menus": {
+    "menu_one": {
+      "link_one": "Наша історія",
+      "link_two": "Оплата",
+      "link_three": "Повернення",
+      "link-four": "Лист побажань",
+      "link-five": "Зв'язатись з нами"
+    },
+    "menu_two": {
+      "link_one": "Іграшки",
+      "link_two": "Підголівники",
+      "link_three": "Посуд",
+      "link-four": "Розвиток та творчість",
+      "link-five": "Блог"
+    },
+    "means_of_calculation": "Засоби розрахунку",
+    "copyright_full": "2022 © Антистрес подарунки та м'які іграшки - купити в інтернет магазині Expetro™ Харків з доставкою в Київ, Одесу, Львів, Дніпро, Запоріжжя",
+    "contact-info": {
+      "phone": "Дзвоніть",
+      "email": "Пошта",
+      "hours": "Години"
+    }
+  }
+}
