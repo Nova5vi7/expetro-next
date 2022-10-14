@@ -1,0 +1,32 @@
+{
+  "footer_menu_titles": {
+    "title_one": "Company",
+    "title_two": "Popular"
+  },
+  "footer_menus": {
+    "menu_one": {
+      "link_one": "About us",
+      "link_two": "Delivery",
+      "link_three": "Payment",
+      "link_four": "Return",
+      "link_five": "Wishes",
+      "link_six": "Contact us"
+    },
+    "menu_two": {
+      "link_one": "Toys",
+      "link_two": "Headrests",
+      "link_three": "Dishes",
+      "link_four": "Development and creativity",
+      "link_five": "Blog",
+      "link_six": "Contact"
+    },
+    "means_of_calculation": "Means of calculation",
+    "copyright_full": "2022 © Antistress gifts and soft toys - buy in the Expetro™ Kharkiv online store with delivery to Kyiv, Odesa, Lviv, Dnipro, Zaporizhzhia",
+    "sign_up": "Sign up",
+    "contact-info": {
+      "phone": "Call",
+      "email": "Email",
+      "hours": "Hours"
+    }
+  }
+}

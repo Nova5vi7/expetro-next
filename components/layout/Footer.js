@@ -1,7 +1,10 @@
 import React from "react";
 import Link from "next/link"
+import {useTranslation} from "next-i18next";
 
 const Footer = () => {
+    const {t} = useTranslation('footer')
+
     return (
         <>
             <footer className="main">
@@ -177,7 +180,7 @@ const Footer = () => {
                                         </a>
                                         </Link>
                                         <p className="font-lg text-heading">
-                                            2022 © Антистрес подарунки та м'які іграшки - купити в інтернет магазині Expetro™ Харків з доставкою в Київ, Одесу, Львів, Дніпро, Запоріжжя
+                                            {t("footer_menus.copyright_full")}
                                         </p>
                                     </div>
                                     <ul className="contact-infor">
@@ -186,7 +189,7 @@ const Footer = () => {
                                                 src="/assets/imgs/theme/icons/icon-contact.svg"
                                                 alt=""
                                             />
-                                            <strong>Дзвоніть:</strong>
+                                            <strong>{t("footer_menus.contact-info.phone")}: </strong>
                                             <span>+38 (095) 223-17-10</span>
                                         </li>
                                         <li>
@@ -194,7 +197,7 @@ const Footer = () => {
                                                 src="/assets/imgs/theme/icons/icon-email-2.svg"
                                                 alt=""
                                             />
-                                            <strong>Email:</strong>
+                                            <strong>{t("footer_menus.contact-info.email")}: </strong>
                                             <span>sale@Nest.com</span>
                                         </li>
                                         <li>
@@ -202,7 +205,7 @@ const Footer = () => {
                                                 src="/assets/imgs/theme/icons/icon-clock.svg"
                                                 alt=""
                                             />
-                                            <strong>Hours:</strong>
+                                            <strong>{t("footer_menus.contact-info.hours")}: </strong>
                                             <span>
                                                 10:00 - 18:00, Mon - Sat
                                             </span>
@@ -214,25 +217,25 @@ const Footer = () => {
                                 className="footer-link-widget col  wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".1s"
                             >
-                                <h4 className="widget-title">Компанія</h4>
+                                <h4 className="widget-title">{t("footer_menu_titles.title_one")}</h4>
                                 <ul className="footer-list  mb-sm-5 mb-md-0">
                                     <li>
-                                        <a href="#">Наша історія</a>
+                                        <a href="#">{t("footer_menus.menu_one.link_one")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Доставка</a>
+                                        <a href="#">{t("footer_menus.menu_one.link_two")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Оплата</a>
+                                        <a href="#">{t("footer_menus.menu_one.link_three")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Повернення</a>
+                                        <a href="#">{t("footer_menus.menu_one.link_four")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Лист побажань</a>
+                                        <a href="#">{t("footer_menus.menu_one.link_five")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Зв'язатись з нами</a>
+                                        <a href="#">{t("footer_menus.menu_one.link_six")}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -241,25 +244,25 @@ const Footer = () => {
                                 className="footer-link-widget col  wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".4s"
                             >
-                                <h4 className="widget-title ">Популярні</h4>
+                                <h4 className="widget-title ">{t("footer_menu_titles.title_two")}</h4>
                                 <ul className="footer-list  mb-sm-5 mb-md-0">
                                     <li>
-                                        <a href="#">Іграшки</a>
+                                        <a href="#">{t("footer_menus.menu_two.link_one")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Підголівники</a>
+                                        <a href="#">{t("footer_menus.menu_two.link_two")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Посуд</a>
+                                        <a href="#">{t("footer_menus.menu_two.link_three")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Розвиток та творчість</a>
+                                        <a href="#">{t("footer_menus.menu_two.link_four")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Блог</a>
+                                        <a href="#">{t("footer_menus.menu_two.link_five")}</a>
                                     </li>
                                     <li>
-                                        <a href="#">Контакт</a>
+                                        <a href="#">{t("footer_menus.menu_two.link_six")}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -267,7 +270,7 @@ const Footer = () => {
                                 className="footer-link-widget widget-install-app col  wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".5s"
                             >
-                                <p className="mb-20 ">Засоби розрахунку</p>
+                                <p className="mb-20 ">{t("footer_menus.means_of_calculation")}</p>
                                 <img
                                     className=""
                                     src="/assets/imgs/theme/payment-method.png"
@@ -315,7 +318,7 @@ const Footer = () => {
                         </div>
                         <div className="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
                             <div className="mobile-social-icon">
-                                <h6>Підписуйтесь</h6>
+                                <h6>{t("footer_menus.sign_up")}</h6>
                                 <a href="#">
                                     <img
                                         src="/assets/imgs/theme/icons/icon-facebook-white.svg"

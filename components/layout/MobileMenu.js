@@ -1,9 +1,19 @@
 import Link from "next/link";
 import { useState } from "react";
+import {useRouter} from "next/router";
+import {useTranslation} from "next-i18next";
 import useClickOutside from "../../util/outsideClick";
 
+const languageMap = {
+    'uk': 'Українська',
+    'en': 'English',
+    'ru': 'Русский'
+}
 
 const MobileMenu = ({ isToggled, toggleClick }) => {
+    const {t} = useTranslation('header')
+    const {locale, locales, asPath} = useRouter();
+
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
@@ -63,7 +73,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                             <form action="#">
                                 <input
                                     type="text"
-                                    placeholder="Пошук товарів…"
+                                    placeholder={t("search_text")}
                                 />
                                 <button type="submit">
                                     <i className="fi-rs-search"></i>
@@ -74,7 +84,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                             <div className="main-categori-wrap mobile-header-border">
                                 <Link href="#">
                                     <a className="categori-button-active-2">
-                                        <span className="fi-rs-apps"></span> Дивитись каталог
+                                        <span className="fi-rs-apps"></span> {t("header_section_bottom.catalog_btn_text")}
                                     </a>
                                 </Link>
                                 <div className="categori-dropdown-wrap categori-dropdown-active-small">
@@ -166,7 +176,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
                                         <Link href="/index">
-                                            <a>Іграшки</a>
+                                            <a>{t("header_section_bottom.link_one")}</a>
                                         </Link>
                                     </li>
                                     <li
@@ -177,7 +187,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
                                        <Link href="/shop-grid-right">
-                                            <a>Підголівники</a>
+                                            <a>{t("header_section_bottom.link_two")}</a>
                                         </Link>
                                     </li>
                                     <li
@@ -188,7 +198,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
                                         <Link href="#">
-                                            <a>Посуд</a>
+                                            <a>{t("header_section_bottom.link_three")}</a>
                                         </Link>
                                     </li>
                                     <li
@@ -199,7 +209,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
                                         <Link href="#">
-                                            <a>Розвиток та творчість</a>
+                                            <a>{t("header_section_bottom.link_four")}</a>
                                         </Link>
                                     </li>
                                     <li
@@ -216,7 +226,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                             <i className="fi-rs-angle-small-down"></i>
                                         </span>
                                         <Link href="/blog-category-fullwidth">
-                                            <a>Блог</a>
+                                            <a>{t("header_section_bottom.link_five")}</a>
                                         </Link>
                                         <ul
                                             className={
@@ -278,7 +288,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                         }
                                     >
                                         <Link href="#">
-                                            <a>Контакт</a>
+                                            <a>{t("header_section_bottom.link_six")}</a>
                                         </Link>
                                     </li>
                                     <li
@@ -295,7 +305,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                             <i className="fi-rs-angle-small-down"></i>
                                         </span>
                                         <Link href="#">
-                                            <a>Мова</a>
+                                            <a>{t("language")}</a>
                                         </Link>
                                         <ul
                                             className={
@@ -304,16 +314,17 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                                                     : "d-none"
                                             }
                                         >
-                                            <li>
-                                                <Link href="#">
-                                                    <a>English</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link href="#">
-                                                    <a>Українська</a>
-                                                </Link>
-                                            </li>
+                                            {locales.map((locale, i) => {
+                                                return (
+                                                    <li key={i}>
+                                                        <Link href={asPath} locale={locale}>
+                                                            <a>
+                                                                {languageMap[locale]}
+                                                            </a>
+                                                        </Link>
+                                                    </li>
+                                                );
+                                            })}
                                         </ul>
                                     </li>
                                 </ul>
@@ -322,7 +333,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                         <div className="mobile-header-info-wrap mobile-header-border">
                             <div className="single-mobile-header-info mt-30">
                                 <Link href="/page-contact">
-                                    <a> Our location </a>
+                                    <a>{t("our_location")}</a>
                                 </Link>
                             </div>
                             <div className="single-mobile-header-info">
@@ -332,7 +343,7 @@ const MobileMenu = ({ isToggled, toggleClick }) => {
                             </div>
                         </div>
                         <div className="mobile-social-icon">
-                            <h5 className="mb-15 text-grey-4">Підписуйся</h5>
+                            <h5 className="mb-15 text-grey-4">{t("sign_up")}</h5>
                             <Link href="#">
                                 <a>
                                     <img

@@ -95,7 +95,7 @@ export async function getServerSideProps(context) {
         props: {
             catAll,
             active,
-            ...(await serverSideTranslations(context.locale, ['header']))
+            ...(await serverSideTranslations(context.locale, ['header', 'footer']))
         }, // will be passed to the page component as props
     }
 }

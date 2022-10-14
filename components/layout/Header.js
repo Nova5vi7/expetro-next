@@ -23,7 +23,6 @@ const Header = ({
     const [scroll, setScroll] = useState(0);
     const {locale, locales, asPath} = useRouter();
     const {t} = useTranslation('header')
-    console.log(locale, locales, asPath)
 
     useEffect(() => {
         document.addEventListener("scroll", () => {
@@ -41,7 +40,10 @@ const Header = ({
             <header className="header-area header-style-1 header-height-2">
                 <div className="mobile-promotion">
                     <span>
-                        Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left
+                        {t("news_flash_text")}
+                        <Link href="/">
+                            <a style={{color: '#fff'}}> <strong>{t("news_flash_link")}</strong></a>
+                        </Link>
                     </span>
                 </div>
                 <div className="header-top header-top-ptb-1 d-none d-lg-block">
@@ -101,7 +103,7 @@ const Header = ({
                                 <div className="header-info header-info-right">
                                     <ul>
                                         <li>
-                                            {t("phone_description")}: <strong className="text-brand"> +38 (095)
+                                            {t("phone_description")}: <strong className="text-brand" style={{marginLeft: 5}}> +38 (095)
                                             223-17-10</strong>
                                         </li>
                                         <li className='language-dropdown-trigger'>
@@ -125,22 +127,6 @@ const Header = ({
                                                         </li>
                                                     );
                                                 })}
-                                                {/*<li>*/}
-                                                {/*    <Link href="">*/}
-                                                {/*        <a>*/}
-                                                {/*            <img src="/assets/imgs/theme/flag-ru.png" alt="" />*/}
-                                                {/*            Pусский*/}
-                                                {/*        </a>*/}
-                                                {/*    </Link>*/}
-                                                {/*</li>*/}
-                                                {/*<li>*/}
-                                                {/*    <Link href="en">*/}
-                                                {/*        <a>*/}
-                                                {/*            <img src="/assets/imgs/theme/flag-en.png" alt="" />*/}
-                                                {/*            English*/}
-                                                {/*        </a>*/}
-                                                {/*    </Link>*/}
-                                                {/*</li>*/}
                                             </ul>
                                         </li>
                                     </ul>
