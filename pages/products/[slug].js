@@ -1,4 +1,5 @@
 import React from "react";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import ProductDetails from "../../components/ecommerce/ProductDetails";
 import Layout from '../../components/layout/Layout';
 import { server } from "../../config/index";
@@ -16,17 +17,19 @@ const ProductId = ({ product }) => {
     );
 };
 
-
-
-ProductId.getInitialProps = async (params) => {
-    
+export async function getServerSideProps(context) {
     const request = await fetch(`${server}/static/product.json`);
     const data = await request.json();
 
-    const index = findProductIndex(data, params.query.slug);
+    const index = findProductIndex(data, context.query.slug);
     // console.log(params);
 
-    return { product: data[index] };
-};
+    return {
+        props: {
+            product: data[index],
+            ...(await serverSideTranslations(context.locale, ['header', 'footer']))
+        },
+    }
+}
 
 export default ProductId;

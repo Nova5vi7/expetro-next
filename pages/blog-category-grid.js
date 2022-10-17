@@ -1,8 +1,11 @@
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import BlogGrid from "../components/elements/BlogGrid";
 import BlogGridBig from "../components/elements/BlogGridBig";
 import BlogSidebar from "../components/elements/BlogSidebar";
 import Layout from "../components/layout/Layout";
 import BlogFilter from './../components/elements/BlogFilter';
+import {server} from "../config";
+import {findProductIndex} from "../util/util";
 
 function PageBlogGrid() {
     return (
@@ -74,6 +77,15 @@ function PageBlogGrid() {
             </Layout>
         </>
     );
+}
+
+export async function getServerSideProps(context) {
+
+    return {
+        props: {
+            ...(await serverSideTranslations(context.locale, ['header', 'footer']))
+        },
+    }
 }
 
 export default PageBlogGrid;

@@ -1,3 +1,4 @@
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useRouter} from "next/router";
 import {useEffect, useRef, useState} from "react";
 import {connect} from "react-redux";
@@ -34,7 +35,14 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async (c
     if(page) {
         return {
             props: {
-                page
+                page,
+                ...(await serverSideTranslations(context.locale, ['header', 'footer']))
+            }
+        }
+    } else {
+        return {
+            props: {
+                ...(await serverSideTranslations(context.locale, ['header', 'footer']))
             }
         }
     }
